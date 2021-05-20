@@ -6,8 +6,9 @@ function createWindow() {
     width: 800,
     height: 600,
   });
-
-  win.loadFile("index.html");
+  win.webContents.openDevTools();
+  const mainFile = path.join(__dirname, "/public/index.html");
+  win.loadFile(mainFile);
 }
 
 app.whenReady().then(() => {
